@@ -1,10 +1,11 @@
-use spawn::spawn_fn;
+use watch::watch_fn;
 
 
+mod watch;
 mod timer;
 mod sync;
 mod channel;
 mod spawn;
 pub async fn mod_fn(){
-    spawn_fn().await;
+    watch_fn().await;
 }
