@@ -1,11 +1,10 @@
-use sync::sync_fn;
+use spawn::spawn_fn;
+
 
 mod timer;
 mod sync;
-
+mod channel;
+mod spawn;
 pub async fn mod_fn(){
- 
- for i in 1..10{
-    sync_fn(i).await;
- }
+    spawn_fn().await;
 }
