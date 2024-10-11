@@ -11,7 +11,7 @@ pub async fn watch_fn(){
     // Task 1: Wait for updates in rx1
     tokio::spawn(async move {
         while rx1.changed().await.is_ok() {
-            println!("Task 1 received: {:?}", *rx1.borrow());
+            println!("Task 1 received: {:?}", rx1.borrow().clone());
         }
     });
 

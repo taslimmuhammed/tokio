@@ -1,11 +1,12 @@
-use watch::watch_fn;
+use select::select_fn;
 
 
+mod select;
 mod watch;
 mod timer;
 mod sync;
 mod channel;
 mod spawn;
 pub async fn mod_fn(){
-    watch_fn().await;
+    select_fn().await;
 }
