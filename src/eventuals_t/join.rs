@@ -40,7 +40,8 @@ pub async fn join_fn() {
             Ok(_) = receiver.changed()=>{},
         }
         let val = *receiver.borrow();
-        println!("{val}");
+        println!("values is {val}");
+        
     }
     // j2.await;
 }
