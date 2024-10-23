@@ -10,12 +10,26 @@ pub async fn select_fn() {
     // Simulate sending updates on both channels
     tokio::spawn(async move {
         sleep(Duration::from_secs(1)).await;
-        tx1.send(10).unwrap();
+        tx1.send(1).unwrap();
+        println!("tx1 send 1");
+        sleep(Duration::from_secs(1)).await;
+        tx1.send(11).unwrap();
+        println!("tx1 send 11");
+        sleep(Duration::from_secs(1)).await;
+        tx1.send(111).unwrap();
+        println!("tx1 send 111");
+        sleep(Duration::from_secs(1)).await;
+        tx1.send(1111).unwrap();
+        println!("tx1 send 1111");
     });
 
     tokio::spawn(async move {
-        sleep(Duration::from_secs(2)).await;
-        tx2.send(20).unwrap();
+        sleep(Duration::from_secs(1)).await;
+        tx2.send(2).unwrap();
+        println!("tx2 send 2");
+        sleep(Duration::from_secs(4)).await;
+        tx2.send(22).unwrap();
+        println!("tx2 send 22");
     });
 
     // Listening to both receivers
